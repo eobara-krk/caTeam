@@ -37,8 +37,18 @@ interface Item {
 export class AppComponent {
   items: Item[] = [
 
+    { 
+      title: 'Laser Tag Wrocław VII-2025', 
+      show: false,
+      links: [
+        { name: 'kwatera główna (strona)', url:'https://kwateraglowna.pl/kontakt/'},
+        { name: 'Zdjęcie', url: 'https://drive.google.com/file/d/1-G72WfoWtTSEMAsyaDK6XouzIzKg5vFL/view?usp=sharing'},
+
+      ]
+    },
+
         { 
-      title: 'Zagórze Śląskie 2025', 
+      title: 'Zagórze Śląskie X-2025', 
       show: false,
       links: [
         { name: 'tama Lubachów', url:'https://drive.google.com/file/d/1RtcC_1GQL-aOS7knwSkkxDcff2QK3_dX/view?usp=sharing'},
@@ -51,7 +61,7 @@ export class AppComponent {
 
 
       ]
-    },
+    }
   ];
 
  private readonly summaryPassword = 'syn';
