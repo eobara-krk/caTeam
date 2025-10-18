@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 // Typy dla linków i itemów
 interface Link {
@@ -30,7 +31,7 @@ interface Item {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgFor, NgIf, RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -64,29 +65,21 @@ export class AppComponent {
     }
   ];
 
-  currentDateTime: string = '';
+
 
  private readonly summaryPassword = 'syn';
 
- constructor() {
-    // Uruchamiamy aktualizację daty/godziny przy starcie komponentu
-    this.updateDateTime();
-    setInterval(() => this.updateDateTime(), 1000);
-  }
+currentDateTime: Date = new Date();
 
-  // --- METODA DO AKTUALIZACJI DATY I GODZINY ---
-  updateDateTime() {
-    const now = new Date();
-    this.currentDateTime = now.toLocaleString('pl-PL', {
-      weekday: 'short',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
-  }
+constructor() {
+  setInterval(() => {
+    this.currentDateTime = new Date();
+  }, 60000); // aktualizacja co minutę
+}
+
+
+
+
 
   // --- OTWIERANIE LINKÓW ---
   openLink(link: Link) {

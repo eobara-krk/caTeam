@@ -1,9 +1,10 @@
 <main>
   <div class="placeholder">
       <!-- Data i godzina w prawym górnym rogu placeholdera -->
-  <div class="top-right-datetime">
-    {{ currentDateTime }}
-  </div>
+<div class="top-right-datetime">
+  {{ currentDateTime | date:'EEE dd.MM.yyyy HH:mm' }}
+</div>
+
     <!-- HEADER -->
     <div class="header">
       <h1>CA intergracje</h1>

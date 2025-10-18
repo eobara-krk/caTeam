@@ -212,8 +212,22 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 0.85rem;
-  color: var(--gray-700);
-  font-weight: 500;
+  font-size: 0.9rem;            /* lekko większa czcionka */
+  color: #555;                  /* nowoczesny szary */
+  font-weight: 600;             /* bardziej wyraźna */
   user-select: none;
+  background: rgba(255, 255, 255, 0.8); /* półprzezroczyste tło */
+  padding: 0.4rem 0.8rem;       /* trochę przestrzeni wokół tekstu */
+  border-radius: 0.5rem;        /* zaokrąglone rogi */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtelny cień */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.2s ease; /* lekka animacja przy odświeżeniu */
 }
+
+.top-right-datetime::after {
+  content: '⏰';               /* subtelna ikonka zegara */
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
