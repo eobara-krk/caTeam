@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -33,7 +33,8 @@ interface Item {
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }]
 })
 export class AppComponent {
   items: Item[] = [

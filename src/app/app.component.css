@@ -212,22 +212,26 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 0.9rem;            /* lekko większa czcionka */
-  color: #555;                  /* nowoczesny szary */
-  font-weight: 600;             /* bardziej wyraźna */
-  user-select: none;
-  background: rgba(255, 255, 255, 0.8); /* półprzezroczyste tło */
-  padding: 0.4rem 0.8rem;       /* trochę przestrzeni wokół tekstu */
-  border-radius: 0.5rem;        /* zaokrąglone rogi */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtelny cień */
+  background: rgba(255,255,255,0.85);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: right;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: transform 0.2s ease; /* lekka animacja przy odświeżeniu */
+  user-select: none;
 }
 
-.top-right-datetime::after {
-  content: '⏰';               /* subtelna ikonka zegara */
-  margin-left: 0.3rem;
+.date-line {
   font-size: 0.9rem;
-  vertical-align: middle;
+  font-weight: 600;
+  color: #555;
 }
+
+.time-line {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: 0.1rem;
+}
+
 
