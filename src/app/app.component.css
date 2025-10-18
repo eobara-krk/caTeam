@@ -208,30 +208,40 @@
   outline: none;
   box-shadow: 0 0 0 4px rgba(138,43,226,0.5); /* delikatny fokus w fioletowym odcieniu */
 }
+/* DATA I CZAS */
 .top-right-datetime {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255,255,255,0.85);
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  top: 0.5rem;          /* nieco wyżej nad nagłówkiem */
+  right: 2rem;
   text-align: right;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   user-select: none;
+
+  background: rgba(255, 255, 255, 0.9); /* lekko przezroczyste tło */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* delikatny cień */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* efekt hover dla elegancji */
+.top-right-datetime:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .date-line {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #555;
+  color: #333;
 }
 
 .time-line {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #333;
+  color: #555;
   margin-top: 0.1rem;
 }
+
 
 

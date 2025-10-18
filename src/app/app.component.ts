@@ -80,8 +80,6 @@ constructor() {
 
 
 
-
-
   // --- OTWIERANIE LINKÓW ---
   openLink(link: Link) {
     if (!link.url) return;
