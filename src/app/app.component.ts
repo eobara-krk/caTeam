@@ -43,8 +43,8 @@ export class AppComponent {
       title: 'Laser Tag Wrocław VII-2025', 
       show: false,
       links: [
-        { name: 'kwatera główna (strona)', url:'https://kwateraglowna.pl/kontakt/'},
-        { name: 'Zdjęcie', url: 'https://drive.google.com/file/d/1-G72WfoWtTSEMAsyaDK6XouzIzKg5vFL/view?usp=sharing'},
+        { name: 'Zdjęcie', url: 'https://drive.google.com/file/d/1-G72WfoWtTSEMAsyaDK6XouzIzKg5vFL/view?usp=sharing', type: 'foto'},
+        { name: 'kwatera główna (strona)', url:'https://kwateraglowna.pl/kontakt/',type: 'html'}
 
       ]
     },
@@ -53,15 +53,13 @@ export class AppComponent {
       title: 'Zagórze Śląskie X-2025', 
       show: false,
       links: [
-        { name: 'tama Lubachów', url:'https://drive.google.com/file/d/1RtcC_1GQL-aOS7knwSkkxDcff2QK3_dX/view?usp=sharing'},
-        { name: 'kolorowa kładka', url:'https://drive.google.com/file/d/1VxvJ4PgqJIQWeDnlF2wbm8DHAVFZ02zr/view?usp=sharing'},
-        { name: 'przewodnik na zamku Grodno (1)', url:'https://drive.google.com/file/d/1JncLyCUpw4LkSxcPJ_7cHZr_t7M9-IOC/view?usp=sharing'},
-        { name: 'przewodnik na zamku Grodno (2)', url:'https://drive.google.com/file/d/1ZiWmxNSRMvBeD6v0J4kKSi0KMyXL_kRg/view?usp=sharing'},
-        { name: 'belgijka kroki', url:'https://www.youtube.com/watch?v=HaoeHXMoQFo'},
-        { name: 'Zdjęcia', url: 'https://photos.app.goo.gl/nmXEc8hHGVMkh7Ue7'},
-        { name: 'makao zasady', url: 'https://www.morele.net/wiadomosc/gra-karciana-makao-jak-grac-zasady-i-praktyczne-porady-gry-karcianej/18363/'}
-
-
+        { name: 'Zdjęcia', url: 'https://photos.app.goo.gl/nmXEc8hHGVMkh7Ue7', type: 'foto'},
+        { name: 'tama Lubachów', url:'https://drive.google.com/file/d/1RtcC_1GQL-aOS7knwSkkxDcff2QK3_dX/view?usp=sharing', type: 'film'},
+        { name: 'kolorowa kładka', url:'https://drive.google.com/file/d/1VxvJ4PgqJIQWeDnlF2wbm8DHAVFZ02zr/view?usp=sharing', type: 'film'},
+        { name: 'przewodnik na zamku Grodno (1)', url:'https://drive.google.com/file/d/1JncLyCUpw4LkSxcPJ_7cHZr_t7M9-IOC/view?usp=sharing', type: 'film'},
+        { name: 'przewodnik na zamku Grodno (2)', url:'https://drive.google.com/file/d/1ZiWmxNSRMvBeD6v0J4kKSi0KMyXL_kRg/view?usp=sharing', type: 'film'},
+        { name: 'belgijka kroki', url:'https://www.youtube.com/watch?v=HaoeHXMoQFo',type: 'youtube'}, 
+        { name: 'makao zasady', url: 'https://www.morele.net/wiadomosc/gra-karciana-makao-jak-grac-zasady-i-praktyczne-porady-gry-karcianej/18363/',type: 'html'}
       ]
     }
   ];

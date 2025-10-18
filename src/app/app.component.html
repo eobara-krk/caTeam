@@ -5,11 +5,10 @@
       <div class="date-line">{{ currentDateTime | date:'EEEE dd.MM.yyyy':'':'pl-PL' }} r.</div>
     </div>
 
-
     <!-- HEADER -->
     <div class="header">
-      <br><br>
-      <h1>CA intergracje</h1>
+      <br> <br>
+      <h1>CA integracje</h1>
       <p>zdjęcia, filmiki, bonusy</p>
     </div>
 
@@ -22,7 +21,6 @@
         <span>{{ item.show ? '▲' : '▼' }}</span>
       </div>
 
-      <!-- DRZEWKO DLA SPOTKAŃ -->
       <div class="pill-group" *ngIf="item.show">
 
         <!-- Spotkania z podziałem na daty -->
@@ -33,61 +31,68 @@
               <span>{{ meeting.show ? '▲' : '▼' }}</span>
             </div>
 
-            <div class="pill-group link-group" *ngIf="meeting.show">
+            <ul class="link-list" *ngIf="meeting.show">
               <ng-container *ngFor="let link of meeting.links; trackBy: trackByName">
-
-                <!-- BUTTON DO LINKÓW AUDIO I FILMÓW/ALBUMÓW -->
-                <button class="pill" *ngIf="link.url" (click)="openLink(link)">
+                
+                <!-- LINKI Z EMOTKAMI -->
+                <li *ngIf="link.url" (click)="openLink(link)">
+                  <span [ngSwitch]="link.type">
+                    <span *ngSwitchCase="'film'">🎬</span>
+                    <span *ngSwitchCase="'foto'">📷</span>
+                    <span *ngSwitchCase="'audio'">🎵</span>
+                    <span *ngSwitchDefault>📄</span>
+                  </span>
                   {{ link.name }}
-                </button>
+                </li>
 
-                <!-- BUTTON DLA TEKSTÓW CHRONIONYCH -->
-                <button class="pill" *ngIf="link.text || link.protected" (click)="toggleLink(link)">
-                  {{ link.name }}
-                </button>
-
-                <!-- WYŚWIETLANIE CHRONIONEGO TEKSTU -->
-                <div *ngIf="link.show && link.text" class="event-description">
-                  <pre style="white-space: pre-wrap;">{{ link?.text }}</pre>
-                </div>
+                <!-- CHRONIONE TEKSTY -->
+                <li *ngIf="link.text || link.protected" (click)="toggleLink(link)" class="protected-link">
+                  🔒 {{ link.name }}
+                  <div *ngIf="link.show && link.text" class="event-description">
+                    <pre style="white-space: pre-wrap;">{{ link?.text }}</pre>
+                  </div>
+                </li>
 
               </ng-container>
-            </div>
+            </ul>
           </div>
         </ng-container>
 
-        <!-- Zwykłe linki (bez spotkań) -->
-        <ng-container *ngIf="item.links">
+        <!-- ZWYKŁE LINKI (BEZ SPOTKAŃ) -->
+        <ul class="link-list" *ngIf="item.links">
           <ng-container *ngFor="let link of item.links; trackBy: trackByName">
-            <button class="pill" *ngIf="link.url" (click)="openLink(link)">
+            
+            <li *ngIf="link.url" (click)="openLink(link)">
+              <span [ngSwitch]="link.type">
+                <span *ngSwitchCase="'film'">🎬</span>
+                <span *ngSwitchCase="'foto'">📷</span>
+                <span *ngSwitchCase="'audio'">🎵</span>
+                <span *ngSwitchCase="'youtube'">📺</span> <!-- YouTube -->
+                <span *ngSwitchCase="'html'">🌐</span> <!-- Strona WWW -->
+                <span *ngSwitchDefault>📄</span>
+              </span>
               {{ link.name }}
-            </button>
+            </li>
 
-            <button class="pill" *ngIf="link.text || link.protected" (click)="toggleLink(link)">
-              {{ link.name }}
-            </button>
+            <li *ngIf="link.text || link.protected" (click)="toggleLink(link)" class="protected-link">
+              🔒 {{ link.name }}
+              <div *ngIf="link.show && link.text" class="event-description">
+                <pre style="white-space: pre-wrap;">{{ link?.text }}</pre>
+              </div>
+            </li>
 
-            <div *ngIf="link.show && link.text" class="event-description">
-              <pre style="white-space: pre-wrap;">{{ link?.text }}</pre>
-            </div>
           </ng-container>
-        </ng-container>
+        </ul>
 
       </div>
     </div>
 
-<!-- Dolny pasek w placeholderze -->
-<div style="margin-top: 1rem; position: relative; padding-top: 1rem; border-top: 1px solid #eee;">
-  <!-- Wyśrodkowany przycisk -->
-  <button class="stylish-button" style="display: block; margin: 0 auto;" (click)="closePage()">Zamknij stronę</button>
-  
-  <!-- Znak wodny po prawej stronie -->
-  <div class="znak-wodny">
-    © <span class="ozdobne">EO</span>
-  </div>
-</div>
-
-
-
+    <!-- Dolny pasek -->
+    <div style="margin-top: 1rem; position: relative; padding-top: 1rem; border-top: 1px solid #eee;">
+      <button class="stylish-button" style="display: block; margin: 0 auto;" (click)="closePage()">Zamknij stronę</button>
+      <div class="znak-wodny">
+        © <span class="ozdobne">EO</span>
+      </div>
+    </div>
   </div>
 </main>
