@@ -64,7 +64,29 @@ export class AppComponent {
     }
   ];
 
+  currentDateTime: string = '';
+
  private readonly summaryPassword = 'syn';
+
+ constructor() {
+    // Uruchamiamy aktualizację daty/godziny przy starcie komponentu
+    this.updateDateTime();
+    setInterval(() => this.updateDateTime(), 1000);
+  }
+
+  // --- METODA DO AKTUALIZACJI DATY I GODZINY ---
+  updateDateTime() {
+    const now = new Date();
+    this.currentDateTime = now.toLocaleString('pl-PL', {
+      weekday: 'short',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
 
   // --- OTWIERANIE LINKÓW ---
   openLink(link: Link) {
